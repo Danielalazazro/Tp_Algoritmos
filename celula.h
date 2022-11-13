@@ -18,24 +18,28 @@ private:
 public:
     /*
      * pre:
-     * post: convierte la cargagenetica en 0.
+     * post: convierte una de las cargagenetica en 0.
      */
     void matarUnGen();
     /*
      * pre:
-     * post:
+     * post:constructor inicializo el array de gen en 0 y los otros atributos.
      */
     Celula();
+    /*
+     * pre:
+     * pos:inicializo la carga genetica con los datos ingresados.
+     */
 
     Celula(int  gen1,int  gen2, int  gen3);
     /*
      * pre:
-     * post:
+     * post: destructor de celula por defecto.
      */
     ~Celula();
     /*
-     * pre:
-     * post:
+     * pre:-
+     * post:devolvemos un caracter en caso de que este viva o 0 si esta muerta.
      */
     char dibujar();
     /*
@@ -50,42 +54,42 @@ public:
     void revivir();
     /*
      * pre: recibe la celula sin carga genetica
-     * post: cambia el valor de la carga genetica.
+     * post: cambia el valor de la carga genetica en forma aleatoria.
      */
     void setearCargaGeneticaAleatoria();
     /*
-     * pre: recibe el tableroCelda con celulas muertas
-     * post: devulve el tableroCelda con las carga geneticas ingresadas por el usuario.
+     * pre: recibe las celulas muertas
+     * post: devulve las celulas  con las carga geneticas ingresadas por el usuario.
      */
     void setearCargaGeneticaUsuario();
     /*
-     * pre:
-     * post:
+     * pre: la celula tiene que estar en estado 1 (viva).
+     * post: devulve el estado de celula a 0.
      */
     void matarCelula();
     /*
-     * pre:
-     * post:
+     * pre: la celula tiene que estar creada.
+     * post: devulve true si el estado de la celula anterior estaba en 0 y el estado actual 1.
      */
     bool haNacido();
     /*
-     * pre:
-     * post:
+     * pre: el estado de la celula esta en 1 (viva).
+     * post: el estado de la celula esta en 0 (muerta).
      */
     bool estaMuerta();
     /*
-     * pre:
-     * post:
+     * pre: -
+     * post: devolvemos la cargaGenetica de las nuevas celulas generadas por las celulas existentes.
      */
     void heredarCargaGenetica(Lista<Celula *> *celulasVivas, int estadoCelda );
     /*
-     * pre:
-     * post:
+     * pre:-
+     * pos: devolvemos el arrayGen.
      */
     Gen* getArrayGen();
     /*
-     * pre:
-     * post:
+     * pre: necesitas previamente una lista de celulas vivas.
+     * pos: devulvo la carga genetica nueva como el promedio de las celulas vivas .
      */
     void promedioDeCargas(Lista<Celula *> *celulasVivas, int *cargaGen1, int *cargaGen2, int *cargaGen3);
     /*
