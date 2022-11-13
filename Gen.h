@@ -7,40 +7,51 @@
 
 static const unsigned int maximaCargaGenetica = 255;
 
-class Gen {
+class Gen{
 private:
     unsigned int cargaGenetica;
-
 public:
     /*
-     * pre:
-     * post:
+     * pre:-
+     * post:constructor por defecto.
      */
     Gen();
+    /*
+     * pre:
+     * post: inicializamos el atributo.
+     */
     Gen(unsigned int cargaGenetica);
+    /*
+     * pre:
+     * post: destructor por defecto.
+     */
     virtual ~Gen();
     /*
-     * pre:
-     * post:
+     * pre:-
+     * post: devolvemos el valor de la carga genetica.
      */
     unsigned int getCargaGenetica();
+
     /*
-     *pre:
-     *post:
-     */
-    unsigned int getMaximoDeCargaGenetica();
-    /*
-     * pre:
-     * post:
-     */
-    void setCargaGenetica(unsigned int cargaGenetica);
-    /*
-     * pre:
-     * post:
+     * pre: esperamoe le ingreso de la carga genetica
+     * post: verificamos la carga genetica y devulve tru si esta en el rango entre y la maximaCargaGenetica.
      */
     bool verificarEnRango(unsigned int cargaGenetica );
+    /*
+     * pre: nesecita las posiciones de la celula.
+     * post: asignamos  al atributo de cargaGenetica lo ingresado entr el usuario .
+     */
+    void insertarCargaUsuario();
 
+    /*
+     * pre:-
+     * post:nos devuelve true o false  para virificar si esta vivo el gen.
+     */
+    bool estaVivoGen();
+    /*
+     * pre: por lo menos una carga genetica de la celula tiene que ser mayor a 0.
+     * post: convierte la carga genetica a 0.
+     */
+    void matarGen();
 };
-
-
 #endif //TP2_GEN_H
