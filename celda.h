@@ -7,10 +7,9 @@
 #include "Celula.h"
 #include "Lista.h"
 
-
 class Celda {
 private:
-    //Para 2 dimenciones // y para 3 dimensiones es Celda****vecinos
+    
     Celda****vecinosAdyacentes;
     Lista<Celda*> * celdasAdyacentes;
     int estadoDeCelda; //estadoActual que epuede variar
@@ -20,128 +19,97 @@ private:
     int posicionZ;
 public:
     /*
-     * pre:
-     * post:
+     * pre:-
+     * post:inicializo los atributos en 0.
      */
     Celda();
     /*
-     * pre:
-     * post:
+     * pre:-
+     * post: le asigno nuevos parametros a los atributos.
      */
     Celda(int filaIngresa, int columnaIngresada, int profundidadIngresada);
     /*
-     * pre:
-     * post:
+     * pre: recibe como parametro la cantidad de celulas nacidas.
+     * pos: le asiganamos un metodo a cada estado celda.
      */
     void aplicarConportamiento(int *cantCelNacidasTurno);
     /*
-     * pre:
-     * post:
+     * pre:-
+     * post: matamos un gen en este metodo.
      */
     void aplicarEnvenenamiento();
+
     /*
-     * pre:
-     * post:
-     */
-    void aplicarContaminacion();
-    /*
-     * pre:
-     * post:
+     * pre:-
+     * post: nace una celula nueva ademas de la qu nace por cantidad de celulas vecinas.
      */
     void aplicarPortal(int *cantCelNacidasTurno);
     /*
-     *pre:
-     *post:
-     */
-    void aplicarProcreadora();
-    /*
-     *pre:
-     *post:
-     */
-    void  aplicarRadioactividad();
-    /*
      * pre:-
-     * post: cambia el estadoActual de la tableroCelda
-     */
-    void setCelula(Celula* celulaIngresada);
-    /*
-     * pre:Las coordenadas de vecinos van de  -1 (izquierda) a 1 (horizontal) y de -1 (arriba) a 1 (abajo) en vertical
-     * post:
-     */
-    void asignarVecino(int ancho, int alto, int profundidad, Celda* celVecino);
-    /*
-     * pre: Las coordenadas de vecinos van de  -1 (izquierda) a 1 (horizontal) y de -1 (arriba) a 1 (abajo) en vertical
-     * post: devulve el vecino o vacio.
-     */
-    Celda* obtenerVecino();
-    /*
-     * pre: Las coordenadas de vecinos van de  -1 (izquierda) a 1 (horizontal) y de -1 (arriba) a 1 (abajo) en vertical
-     * post: devulve verdadero o falso en caso de que haya una celula.
-     */
-    bool tieneVecino(int ancho, int alto, int profundidad);
-
-    /*
-     * pre:
-     * post:
+     * post: obtengo la celula que es un puntero a celula.
      */
     Celula* obtenerCelula();
 
     /*
-     * pre:
-     * post:destuye la tableroCelda
+     * pre:-
+     * post: eliminamos la celulas adyacentes y la celula creada con memoria dinamica.
      */
     ~Celda();
 
     /*
-     * pre:
-     * post:
+     * pre:-
+     * post: devolvemos la posicionX de la celda.
      */
     int getPosX();
     /*
-     * pre:
-     * post:
+     * pre:-
+     * post: devolvemos la posicionY de la celda.
      */
     int getPosY();
     /*
-     * pre:
-     * post:
+     * pre:-
+     * post: devolvemos la posicionZ de la celda.
      */
     int getPosZ();
+    /*
+     * pre: recibo como parametro una celda.
+     * pos: inserto una celda a las celdas adyacentes
+     */
 
     void agregarAdyacente(Celda *pCelda);
     /*
-     * pre:
-     * post:
+     * pre:-
+     * post: obtengo la lista de celdas adyacentes.
      */
     Lista<Celda*>* getCeldasAdyacentes();
 
     void imprimirCelda();
 
     void revivirCelula();
+    /*
+     * pre:-
+     * pos: devulve tru si el estado de celda es 4.
+     */
     bool tieneEstadoProcreadora();
     /*
-     * pre:
-     * post:
+     * pre:-
+     * post: devulve la cantidad de celulas vivas.
      */
     int obtenerCantCelVivasAdy();
-
+    /*
+     * pre:-
+     * pos: obtengo el estado de celda.
+     */
     int getEstado();
-
+    /*
+     * pre:-
+     * pos: devulve true si el estado de celda es igual a 2 (contaminada).
+     */
     bool tieneEstadoContaminada();
-
+    /*
+     * pre: recibimos un estado de celda
+     * pos: cambio un estado de celda a uno nuevo.
+     */
     void setNuevoEstado();
 };
-
-
-//estadoActual qu epuede variar
-/*
-int contaminada;//estadoActual = 1:tableroCelda contaminada
-int envenenada;//estadoActual = 2 :tableroCelda envenenada
-int procreadora;//estade = 3:tableroCelda preocreadora
-int portal;//estadoActual = 4:tableroCelda portal
-//estadoActual = 5 :tableroCelda radioactiva
-int estadoDeCelda;
-*/
-
-
 #endif //TP2_CELULAS_H
