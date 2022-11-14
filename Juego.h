@@ -15,99 +15,84 @@ private:
     int ingresoUsuarioMenu;
     int modoJuego;
 
-
-
 public:
     /*
-     * pre:
-     * post: Devulve la configuracion del juego.
-     */
-     void mostrarModoDeJuego();
-    /*
-     * pre:
-     * post:
+     * pre: -
+     * pos: inicializo los atributos de juego.
      */
     Juego();
     /*
-     * pre:  Necesita  como parametros el alto , el ancho y la posicionZ del tableroCelda.
-     * post: Devulve la dimensiones del tableroCelda del juego
+     * pre: nos muestra la configuracion del juego.
+     * post: Nos solicita el modo de juego que va de 1-3 para continuar el mismo .
+     */
+     void mostrarModoDeJuego();
+    /*
+     * pre:  el juego tiene que estar en modo 1 o 3.
+     * pos: solicitamos el ingreso de las dimensiones del tablero y lo verificamos; se lo asignamos al contructor del tablero.
      */
     void cargarDimensionesDelTableroUsuario();
     /*
-     * pre:
-     * post:Destruye el tableroCelda
+     * pre: el tablero tiene que ser creado.
+     * post:Destruye el atributo tablero .
      */
     ~Juego();
+
     /*
-     * pre:
-     * post:
-     */
-    int obtenerModoJuego();
-    /*
-     * pre:ingresa el modo de juego.
+     * pre: el modo de juego tiene que ser 2.
      * post:nos devuelve las dimensiones del tableroCelda con las dimensiones aleatorias.
      */
     void cargaDeDimensionesDeTableroAleatoria();
-
     /*
-     * pre: juego no iniciado
-     * post: inicia el juego c
+     * pre: necesitamos el modo de juego.
+     * post: devulve el tablero cargado con las dimensiones del tablero y la cantidad de celulas necesarias para que viva una celula o viva.
      */
     void configuracionDeJuego();
     /*
-     * pre:el juego debe estar iniciado
-     * post: el juego de carga con las celulas en el tableroCelda y continua
-     */
-    void continuarJuego();
-    /*
-     * pre:
-     * post:
+     * pre: el modo de juego tiene que ser 1.
+     * post: cargo la cantidadCelulasVivas, cantCelulasVecinasParaNacer, cantidadCelulasSigaViva1 y la cantidadCelulasSigaViva2.
      */
     void cargarCantCelulaVivaNacerySigaViva();
-    /*
-    * pre:  el usuario ingresa la cantidad de celulas vecinas para que una celula nazca , permanezca viva
-    * post: se verifica qu los numeros ingresados sean correctos.
-    */
-
-    void verificarCargasCelulasVecinasNazcaCelula(int *cantidadCelulasVecinasParaNacer);
 
     /*
-     * pre:  recibe la cantidad de celulas vecinas para nacer , ingresdas por el usuario.
-     * post: verifica que lo ingresado por el usuario sea correcto.
+     * pre: necesita el limiteSuperior, limiteInferior Y *ingresoUsuario.
+     * post:nos devulve *ingresoUsuario verificado  o un mensaje de error en caso contrario.
      */
-    void verificarCargasCelulasVecinasSigaViva(int limiteSigaViva, int *cantidadCelulasSigaViva );
-
+    void  verificadorEnRango(int limiteInferior, int limiteSuperior, int *ingresoUsuario);
     /*
-     * pre:
-     * post:nos devulve verdadero o falso si cumple con el rafngo de celulas vivas.
-     */
-    void  verificadorEnRango(int limiteinferior, int limiteSuperior, int *ingresoUsuario);
-    /*
-     * pre:
-     * post:devuelve el maximo entre la dimensiones del tableroCelda.
+     * pre: necesitamos el tablero cargado con sus dimensones.
+     * post:devuelve el maximoGeneral de las celulas vivas del tablero.
      */
     int maxCantCelulasVivas();
     /*
-     * pre:
-     * post: Le solcitamos al usuario el ingrseo de  cantidad de celulas vivas, cantidad de celulas vecinas para que nazca otra y para que continue viva.
+     * pre: el modo de juego tiene que ser 3.
+     * post: Le solcitamos al usuario el ingrseo de  cantidad de celulas vivas,las variables que van a ser de forma
+     *       aleatorias son: cantCelulasVecinasParaNacer, cantidadCelulasSigaViva1 y cantidadCelulasSigaViva2.
      */
     void cargarPosicionesyOtroParametros();
     /*
-     * pre:-
-     * post:una vez iniciado el juego se imprime el menu para que el usuario continue con el juego o no o terminar.
+     * pre: se tuvo que escojer el modoJuego, cargar las variables solicitadas en el tablero.
+     * pos: devulve el tablero impreso con las variables solicitadas y te muestra el menu del juego.
      */
     void mostrarMenuJuego();
     /*
-     * pre:-
-     * post:actualiza el tablero segun las reglas del juego
+     * pre: el juego tiene que haber iniciado.
+     * post:actualiza el tablero segun las reglas del juego, aumenta la cantidad de turnos
      */
     void ejecutarOtroTurno();
-
+    /*
+     * pre: el juego tiene que haber iniciado.
+     * pos: se elimina el tablero y se inicia el juego.
+     */
     void reiniciarJuego();
-
+    /*
+     * pre: el juego tiene que haber iniciado e imprimir el tablero.
+     * pos: se deuvel un mensaje de despedida para el usuario.
+     */
     void terminarJuego();
-
-
+    /*
+     * pre: se solicita al usuario un modo de juego.
+     * pos: se llama a los metodos de configuracion de juego y mostrar menu de juego.
+     */
     void iniciarJuego();
 };
 
