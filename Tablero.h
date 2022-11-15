@@ -4,6 +4,7 @@
 #define TP2_TABLERO_H
 #include "Celda.h"
 #include "Lista.h"
+//#include "Imprimir.h"
 
 class Tablero {
 

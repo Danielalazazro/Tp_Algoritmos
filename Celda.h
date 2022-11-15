@@ -111,5 +111,9 @@ public:
      * pos: cambio un estado de celda a uno nuevo.
      */
     void setNuevoEstado();
+
+    void setCelula(Celula *celulaIngresada);
+
+    void asignarVecino(int ancho, int alto, int profundidad, Celda *celVecino);
 };
 #endif //TP2_CELULAS_H

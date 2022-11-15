@@ -107,6 +107,8 @@ public:
      * pos: nos muestra los estados de una celula que antes estaba viva ahora muerta.
      */
     void antesVivaAhoraMuerta();
+
+    int obtenerCargaGeneticaPredominante();
 };
 
 

@@ -94,6 +94,14 @@ public:
      * pos: se llama a los metodos de configuracion de juego y mostrar menu de juego.
      */
     void iniciarJuego();
+
+    void verificarCargasCelulasVecinasSigaViva(int limiteSigaViva, int *cantidadCelulasSigaViva);
+
+    int obtenerModoJuego();
+
+    void continuarJuego();
+
+    void verificarCargasCelulasVecinasNazcaCelula(int *cantidadCelulasVecinasParaNacer);
 };
 
 

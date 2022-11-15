@@ -446,7 +446,11 @@ void Tablero::aumentarTurno() {
 }
 
 void Tablero::imprimirTablero() {
+   // Imprimir * imprimidortableroColor = new Imprimir();
+    //imprimidortableroColor->imprimirTablero(this->tableroCelda);
+
     for( int prof = 0; prof < this->cantidadMaximaPosZ; prof++){
+
         cout << "imprime el tableroCelda en  z = "<< prof << endl;
         for(int i = 0; i < this->cantidadMaximaPosX; i++) {
             for (int j = 0; j < this->cantidadMaximaPosY; j++) {
@@ -456,6 +460,7 @@ void Tablero::imprimirTablero() {
             cout << "\n";
         }
     }
+    //delete imprimidortableroColor;
 
 }
 

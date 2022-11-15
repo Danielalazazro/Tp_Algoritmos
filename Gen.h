@@ -53,5 +53,9 @@ public:
      * post: convierte la carga genetica a 0.
      */
     void matarGen();
+
+    void setCargaGenetica(unsigned int cargaGenetica);
+
+    void insertarCargaAleatoria();
 };
 #endif //TP2_GEN_H

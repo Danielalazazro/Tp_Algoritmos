@@ -170,9 +170,7 @@ void Juego::verificarCargasCelulasVecinasSigaViva(int limiteSigaViva, int *canti
 }
 
 
-void Juego::setearTablero(int cantidadCelulas){
-    Tablero*  tablero = tablero;
-}
+
 
 
 Juego::~Juego(){
