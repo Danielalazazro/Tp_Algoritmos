@@ -3,7 +3,6 @@
 #include "Celula.h"
 #include <cstdlib>
 # include <iostream>
-#include "AdministradorGen.h"
 #include "Gen.h"
 #include "Lista.h"
 #include "cmath"
@@ -28,12 +27,7 @@ void Celula::setearCargaGeneticaAleatoria(){
     arrayGen[1] = Gen(rand() % maximaCargaGenetica);
     arrayGen[2] = Gen(rand() % maximaCargaGenetica);
 }
-int Celula::obtenerCargaGeneticaPredominante()
-{
-    AdministradorGen adminGen = AdministradorGen( arrayGen[0], arrayGen[1], arrayGen[2]);
-    return adminGen.obtenerGen().getCargaGenetica();
 
-}
 
 Celula::Celula(int gen1, int gen2, int gen3) {
     arrayGen[0] = Gen(gen1);

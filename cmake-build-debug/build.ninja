@@ -85,12 +85,6 @@ build CMakeFiles/tp2.dir/Gen.cpp.o: CXX_COMPILER__tp2_Debug /home/daniela/Escrit
   OBJECT_DIR = CMakeFiles/tp2.dir
   OBJECT_FILE_DIR = CMakeFiles/tp2.dir
 
-build CMakeFiles/tp2.dir/AdministradorGen.cpp.o: CXX_COMPILER__tp2_Debug /home/daniela/Escritorio/TP2/Tp_Algoritmos/AdministradorGen.cpp || cmake_object_order_depends_target_tp2
-  DEP_FILE = CMakeFiles/tp2.dir/AdministradorGen.cpp.o.d
-  FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/tp2.dir
-  OBJECT_FILE_DIR = CMakeFiles/tp2.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target tp2
@@ -99,7 +93,7 @@ build CMakeFiles/tp2.dir/AdministradorGen.cpp.o: CXX_COMPILER__tp2_Debug /home/d
 #############################################
 # Link the executable tp2
 
-build tp2: CXX_EXECUTABLE_LINKER__tp2_Debug CMakeFiles/tp2.dir/main.cpp.o CMakeFiles/tp2.dir/Juego.cpp.o CMakeFiles/tp2.dir/Celula.cpp.o CMakeFiles/tp2.dir/Celda.cpp.o CMakeFiles/tp2.dir/Tablero.cpp.o CMakeFiles/tp2.dir/Gen.cpp.o CMakeFiles/tp2.dir/AdministradorGen.cpp.o
+build tp2: CXX_EXECUTABLE_LINKER__tp2_Debug CMakeFiles/tp2.dir/main.cpp.o CMakeFiles/tp2.dir/Juego.cpp.o CMakeFiles/tp2.dir/Celula.cpp.o CMakeFiles/tp2.dir/Celda.cpp.o CMakeFiles/tp2.dir/Tablero.cpp.o CMakeFiles/tp2.dir/Gen.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/tp2.dir
   POST_BUILD = :
