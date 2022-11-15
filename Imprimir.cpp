@@ -1,9 +1,3 @@
-/*
- * Imprimir.cpp
- *
- *  Created on: 15/11/2022
- *      Author: algo2
- */
 
 #include "imprimir.h"
 #include <iostream>
@@ -16,9 +10,9 @@ void pintarCelda(BMP Imagen,const char* nombre,int profundidadActual){
 			for( int j=0 ; j < Imagen.TellWidth() ; j++){
 				Gen* genes = obtenerCelda(profundidadActual,i,j).obtenerCelula().getArrayGen();
 
-					Imagen(i,j)->Red = genes[0];//es un int?
-					Imagen(i,j)->Green = genes[1];//es un int?
-					Imagen(i,j)->Blue = genes[2];//es un int?
+					Imagen(i,j)->Red = genes[0];
+					Imagen(i,j)->Green = genes[1];
+					Imagen(i,j)->Blue = genes[2];
 					Imagen(i,j)->Alpha= 0;
 			}
 			Imagen.WriteToFile(nombre);
