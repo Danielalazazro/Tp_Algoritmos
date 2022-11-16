@@ -155,3 +155,14 @@ void Celula::antesVivaAhoraMuerta() {
     estadoAnterior = 1;
     estadoActual = 0;
 }
+int Celula::obtenerCargaEnPos(int posicion){
+    if(posicion == 0 ){
+        return arrayGen[0].getCargaGenetica();
+    }
+    else if (posicion == 1){
+        return arrayGen[1].getCargaGenetica();
+    }
+    else if(posicion == 2){
+        return arrayGen[2].getCargaGenetica();
+    }
+}

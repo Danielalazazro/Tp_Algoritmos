@@ -109,6 +109,11 @@ public:
     void antesVivaAhoraMuerta();
 
     int obtenerCargaGeneticaPredominante();
+    /*
+     * pre: la posicion del arrayGen tiene que ser de 0 a 2.
+     * pos: devulve la cargaGenetica del arrayGen.
+     */
+    int obtenerCargaEnPos(int posicion);
 };
 
 

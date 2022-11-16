@@ -17,12 +17,12 @@ public:
      * pre:
      * pos:
     */
-    void pintarCelda(BMP Imagen,const char* nombre,int profundidadActual);
+    void pintarCelda(Tablero *tablero);
     /*
     * pre:
     * pos:
     */
-    void imprimirTablero(Imprimir imprimir);
-}
+    void imprimirTablero(Tablero *tablero);
+};
 
 #endif /* IMPRIMIR_H_ */

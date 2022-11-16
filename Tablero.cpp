@@ -5,6 +5,7 @@
 #include "Tablero.h"
 #include "Celda.h"
 #include "Lista.h"
+#include "Imprimir.h"
 #include <string>
 using namespace std;
 #include <iostream>
@@ -446,8 +447,8 @@ void Tablero::aumentarTurno() {
 }
 
 void Tablero::imprimirTablero() {
-   // Imprimir * imprimidortableroColor = new Imprimir();
-    //imprimidortableroColor->imprimirTablero(this->tableroCelda);
+   Imprimir* imprimidor = new Imprimir();
+    imprimidor->pintarCelda(this);
 
     for( int prof = 0; prof < this->cantidadMaximaPosZ; prof++){
 
