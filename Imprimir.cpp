@@ -8,8 +8,9 @@ Imprimir::Imprimir() {
 
 void Imprimir::pintarCelda(Tablero *tablero){
     BMP Imagen;
+    Imagen.SetBitDepth(8);
     for(int prof = 0; prof < tablero->obtenerProfundidad(); prof++){
-        Imagen.ReadFromFile("imagen1.bmp");
+        Imagen.ReadFromFile("BaseImagen.bmp");
         Imagen.SetSize(tablero->obtenerFila(), tablero->obtenerColumna());
         for( int i = 0 ; i < Imagen.TellWidth(); i++) {
             for (int j = 0; j < Imagen.TellHeight(); j++) {
