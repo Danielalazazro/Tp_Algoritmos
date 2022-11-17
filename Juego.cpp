@@ -93,10 +93,12 @@ void Juego::cargarDimensionesDelTableroUsuario(){
 
 
 }
+
 void Juego::cargaDeDimensionesDeTableroAleatoria(){
-    int anchoAleatorio = minimaDimensionDelTablero + rand() %  maximaDimensionDelTablero;
-    int altoAleatorio = minimaDimensionDelTablero + rand() % maximaDimensionDelTablero;
-    int profundidadAleatorio = minimaDimensionDelTablero + rand() % maximaDimensionDelTablero;
+    srand(time(0));
+    int anchoAleatorio = minimaDimensionDelTablero + rand()  % maximaDimensionDelTablero ;
+    int altoAleatorio = minimaDimensionDelTablero + rand()  % maximaDimensionDelTablero;
+    int profundidadAleatorio =  minimaDimensionDelTablero + rand() % maximaDimensionDelTablero;
     tablero = new Tablero(anchoAleatorio, altoAleatorio, profundidadAleatorio);
 }
 
@@ -144,6 +146,7 @@ Juego::~Juego(){
 }
 //
 void Juego::cargarPosicionesyOtroParametros() {
+    srand(time(0));
     int cantCelulasVecinasParaNacer, cantidadCelulasSigaViva1, cantidadCelulasSigaViva2, cantidadCelulasVivas;
     cout << "Ingrese la cantidad de celulas vivas (" << minimoCantCelulaVivas << " a "<< maxCantCelulasVivas() << "):" ;
 
@@ -151,8 +154,8 @@ void Juego::cargarPosicionesyOtroParametros() {
     tablero->setCantCelulasVivasActuales(cantidadCelulasVivas);
     //Tengo que hacer con un while y contador ingreso de posiciones de celulas vivas y la tableroCelda->celula->cargarCargaGenticaUsuario.
 
-    cantCelulasVecinasParaNacer = 1 + rand() % tablero->minEntreFilaColumnaProfundidad();
-    cantidadCelulasSigaViva1 = 1 + rand() % tablero->minEntreFilaColumnaProfundidad();
+    cantCelulasVecinasParaNacer = 1 + rand() & tablero->minEntreFilaColumnaProfundidad();
+    cantidadCelulasSigaViva1 = 1 + rand() & tablero->minEntreFilaColumnaProfundidad();
     cantidadCelulasSigaViva2 = cantidadCelulasSigaViva1 + 2;
     tablero->setearCantidadCelulasVivasParaNacer(cantCelulasVecinasParaNacer,cantidadCelulasSigaViva1,cantidadCelulasSigaViva2, 3);
 

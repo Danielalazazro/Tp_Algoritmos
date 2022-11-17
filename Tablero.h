@@ -4,8 +4,9 @@
 #define TP2_TABLERO_H
 #include "Celda.h"
 #include "Lista.h"
-//#include "Imprimir.h"
+#include "math.h"
 
+static const unsigned int maximaDimensionTablero = 20;
 class Tablero {
 
 private:

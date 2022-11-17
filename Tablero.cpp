@@ -10,7 +10,7 @@
 using namespace std;
 #include <iostream>
 #include <cmath>
-#include <math.h>
+
 
 Celda* Tablero::obtenerCelda(int posicionZ , int posicionX, int poscionY ){
 
@@ -19,9 +19,10 @@ Celda* Tablero::obtenerCelda(int posicionZ , int posicionX, int poscionY ){
 }
 
 void Tablero::asignarValoresAleatoria(int *profundiaRandom, int *filaRandom, int* columnaRandom ){
+
     *profundiaRandom = rand() % cantidadMaximaPosZ;
-    *filaRandom = rand() % cantidadMaximaPosY;
-    *columnaRandom = rand() % cantidadMaximaPosX;
+    *filaRandom =  rand() % cantidadMaximaPosY;
+    *columnaRandom =   rand() % cantidadMaximaPosX;
 
 }
 
@@ -39,7 +40,7 @@ void Tablero::verificarIngresoUsuario(int limiteSuperior, int* ingresoUsuario){
 }
 void Tablero::cargarCelulasVivasyCargaRandom(){
 
-    cantidadCelulaVivasActuales = 8 + rand() % 20;
+    cantidadCelulaVivasActuales = 8 + rand() % maximaDimensionTablero;
     int i = 0;
     while(i < cantidadCelulaVivasActuales){
         int filaRandom, columnaRandom, profundidadRandom;
@@ -340,6 +341,7 @@ void Tablero::actualizarEstadoDeCeldas(){
 }
 
 void Tablero::setCantCelulasVivasParaNacer(){
+
     this->cantidadCelulasVecinasParaNacer = 1 + rand() % minimoDeLasDimensionesTablero()   ;
 }
 int Tablero::minimoDeLasDimensionesTablero(){
@@ -367,6 +369,7 @@ Tablero::~Tablero() {
 }
 
 void Tablero::cargarParametrosRandom() {
+
     int minimo = minEntreFilaColumnaProfundidad();
     cantidadCelulasVecinasParaNacer = 1 + rand() % minimo;
     cantidadCelulasVecinasParaSeguirViva1 = 1 + rand() % minimo;

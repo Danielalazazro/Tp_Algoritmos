@@ -23,6 +23,7 @@ void Celula::setearCargaGeneticaUsuario(){
     arrayGen[2].insertarCargaUsuario();
 }
 void Celula::setearCargaGeneticaAleatoria(){
+
     arrayGen[0] = Gen(rand() % maximaCargaGenetica);
     arrayGen[1] = Gen(rand() % maximaCargaGenetica);
     arrayGen[2] = Gen(rand() % maximaCargaGenetica);
@@ -48,12 +49,14 @@ char Celula::dibujar(){
 }
 
 void Celula::revivir(){
+
     if(estadoActual == 0){
         estadoActual = 1;
     }
-    arrayGen[0] = Gen( 1 + rand() % 255);
-    arrayGen[1] = Gen( 1 + rand() % 255);
-    arrayGen[2] = Gen( 1 + rand() % 255);
+
+    arrayGen[0] = Gen( 1 + rand() % maximaCargaGenetica);
+    arrayGen[1] = Gen( 1 + rand() % maximaCargaGenetica);
+    arrayGen[2] = Gen( 1 + rand() % maximaCargaGenetica);
 }
 
 void Celula::matarUnGen(){
@@ -83,8 +86,9 @@ bool Celula::estaMuerta() {
     return (estadoActual == 0);
 }
 void Celula::heredarCargaGenetica(Lista<Celula *> *celulasVivas, int estadoCelda) {
+    srand(1);
     int carga1, carga2, carga3;
-    int modoCalcularCargas = 1 + rand() % 3;
+    int modoCalcularCargas =  1 + rand() & 3;
     if(modoCalcularCargas == 1){
         promedioDeCargas(celulasVivas, &carga1, &carga2, &carga3);
     }

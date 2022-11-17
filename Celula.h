@@ -6,6 +6,7 @@
 #define TP2_CELULA_H
 #include "Gen.h"
 #include "Lista.h"
+#include "math.h"
 
 static unsigned int maximoGenes = 3;
 class Celula {

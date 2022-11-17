@@ -4,8 +4,9 @@
 
 #ifndef TP2_JUEGO_H
 #define TP2_JUEGO_H
-
+#include <time.h>
 #include "Tablero.h"
+#include "math.h"
 static const unsigned int minimaDimensionDelTablero = 3;
 static const unsigned int maximaDimensionDelTablero = 20;
 static const unsigned int maximaCelulasVecinasAdy = 26;

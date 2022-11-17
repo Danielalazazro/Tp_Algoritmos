@@ -4,6 +4,7 @@
 
 #ifndef TP2_GEN_H
 #define TP2_GEN_H
+#include "math.h"
 
 static const unsigned int maximaCargaGenetica = 255;
 

@@ -6,12 +6,13 @@ Gen::Gen() {
     cargaGenetica = 0;
 }
 Gen::Gen(unsigned int cargaGen) {
+
     verificarEnRango(cargaGen);
     if (verificarEnRango(cargaGen)){
         this->cargaGenetica = cargaGen;
     }
     else {
-       this->cargaGenetica =  rand() % 255;
+       this->cargaGenetica =  rand() % maximaCargaGenetica;
     }
 }
 Gen::~Gen(){}
