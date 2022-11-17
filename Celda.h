@@ -83,21 +83,18 @@ public:
      */
     Lista<Celda*>* getCeldasAdyacentes();
 
-    void imprimirCelda();
-
-    void revivirCelula();
     /*
      * pre:-
-     * pos: devulve tru si el estado de celda es 4.
+     * pos: devulve verdadero si el estado de celda es 4.
      */
     bool tieneEstadoProcreadora();
     /*
-     * pre:-
-     * post: devulve la cantidad de celulas vivas.
+     * pre: las celdas con celulas  vivas tiene que estar ingresadas al inicio del juego.
+     * post: devulve la cantidad de celulas vivas vecinas de una celda.
      */
     int obtenerCantCelVivasAdy();
     /*
-     * pre:-
+     * pre: -
      * pos: obtengo el estado de celda.
      */
     int getEstado();
@@ -108,12 +105,10 @@ public:
     bool tieneEstadoContaminada();
     /*
      * pre: recibimos un estado de celda
-     * pos: cambio un estado de celda a uno nuevo.
+     * pos: cambio un estado de celda a uno nuevo, el cual puede ser de 1 a 5.
      */
     void setNuevoEstado();
 
-    void setCelula(Celula *celulaIngresada);
 
-    void asignarVecino(int ancho, int alto, int profundidad, Celda *celVecino);
 };
 #endif //TP2_CELULAS_H

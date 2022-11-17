@@ -51,6 +51,9 @@ void Celula::revivir(){
     if(estadoActual == 0){
         estadoActual = 1;
     }
+    arrayGen[0] = Gen( 1 + rand() % 255);
+    arrayGen[1] = Gen( 1 + rand() % 255);
+    arrayGen[2] = Gen( 1 + rand() % 255);
 }
 
 void Celula::matarUnGen(){
@@ -69,17 +72,16 @@ Celula::~Celula() {}
 
 void Celula::matarCelula() {
     estadoActual = 0;
+    arrayGen[0] = Gen(0);
+    arrayGen[1] = Gen(0);
+    arrayGen[2] = Gen(0);
 }
 bool Celula::haNacido(){
     return ((estadoAnterior == 0) && (estadoActual == 1));
-
 }
-
 bool Celula::estaMuerta() {
     return (estadoActual == 0);
-
 }
-
 void Celula::heredarCargaGenetica(Lista<Celula *> *celulasVivas, int estadoCelda) {
     int carga1, carga2, carga3;
     int modoCalcularCargas = 1 + rand() % 3;

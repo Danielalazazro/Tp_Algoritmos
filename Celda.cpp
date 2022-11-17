@@ -42,25 +42,12 @@ void Celda::aplicarConportamiento(int *cantCelNacidasTurno) {
         }
 }
 
-void Celda::setCelula(Celula *celulaIngresada) {
-    celula = celulaIngresada;
-}
-
-void Celda::asignarVecino(int ancho, int alto, int profundidad, Celda *celVecino) {
-    this->vecinosAdyacentes[ancho + 1][alto + 1][profundidad + 1];
-}
-
 Celula* Celda::obtenerCelula(){
     return this->celula;
 }
-
-
 void Celda::aplicarEnvenenamiento(){
     celula->matarUnGen();
 }
-
-
-
 void Celda::aplicarPortal(int *cantCelNacidasTurno) {
 
     bool nacioCelula = false;
@@ -88,18 +75,6 @@ void Celda::aplicarPortal(int *cantCelNacidasTurno) {
         j++;
     }
 }
-void Celda::revivirCelula() {
-
-    for(int i = 0; i < celdasAdyacentes->getTamanioLista(); i++){
-        if(celdasAdyacentes->obtenerSegunPosicionDato(i)->obtenerCelula()->estaMuerta()){
-            celdasAdyacentes->obtenerSegunPosicionDato(i)->obtenerCelula()->revivir();
-        }
-    }
-
-
-}
-
-
 
 int Celda::obtenerCantCelVivasAdy(){
     int cantCelVivas = 0;
@@ -110,9 +85,6 @@ int Celda::obtenerCantCelVivasAdy(){
     }
     return cantCelVivas;
 }
-
-
-
 
 Celda::~Celda(){
     delete celdasAdyacentes;
@@ -129,15 +101,6 @@ void Celda::agregarAdyacente(Celda *unaCelda) {
     celdasAdyacentes->insertarElemento(unaCelda);
 
 }
-
-void Celda::imprimirCelda() {
-    if(this!= NULL){
-        cout << "estadoActual de tableroCelda:  "<< estadoDeCelda ;
-        cout << "  posX: " << posicionX << "  posY: " <<posicionY << "  posZ: " << posicionZ<< endl;
-    }
-
-}
-
 
 
 int Celda::getEstado() {

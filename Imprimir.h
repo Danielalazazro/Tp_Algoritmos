@@ -3,7 +3,6 @@
 #ifndef IMPRIMIR_H_
 #define IMPRIMIR_H_
 # include "EasyBMP.h"
-
 #include "Tablero.h"
 #include "Celda.h"
 #include "Celula.h"
@@ -14,15 +13,11 @@ class Imprimir{
 public:
     Imprimir();
     /*
-     * pre:
-     * pos:
+     * pre: recibe un objeto del tipo puntero a tablero.
+     * pos: devulve el conjunto de imagenes del tablero.
     */
     void pintarCelda(Tablero *tablero);
-    /*
-    * pre:
-    * pos:
-    */
-    void imprimirTablero(Tablero *tablero);
+
 };
 
 #endif /* IMPRIMIR_H_ */

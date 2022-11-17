@@ -17,12 +17,12 @@ public:
      */
     Gen();
     /*
-     * pre:
+     * pre:-
      * post: inicializamos el atributo.
      */
     Gen(unsigned int cargaGenetica);
     /*
-     * pre:
+     * pre: el gen tiene que ser creado.
      * post: destructor por defecto.
      */
     virtual ~Gen();
@@ -54,8 +54,5 @@ public:
      */
     void matarGen();
 
-    void setCargaGenetica(unsigned int cargaGenetica);
-
-    void insertarCargaAleatoria();
 };
 #endif //TP2_GEN_H

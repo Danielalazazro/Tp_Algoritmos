@@ -6,6 +6,8 @@
 #define TP2_JUEGO_H
 
 #include "Tablero.h"
+static const unsigned int minimaDimensionDelTablero = 3;
+static const unsigned int maximaDimensionDelTablero = 20;
 static const unsigned int maximaCelulasVecinasAdy = 26;
 static const unsigned int minimoCantCelulaVivas = 2;
 class Juego {
@@ -49,7 +51,8 @@ public:
     void configuracionDeJuego();
     /*
      * pre: el modo de juego tiene que ser 1.
-     * post: cargo la cantidadCelulasVivas, cantCelulasVecinasParaNacer, cantidadCelulasSigaViva1 y la cantidadCelulasSigaViva2.
+     * post: cargo la cantidadCelulasVivas, cantCelulasVecinasParaNacer, cantidadCelulasSigaViva1 y la cantidadCelulasSigaViva2 ,los caules
+     *      son los atributos del tablero.
      */
     void cargarCantCelulaVivaNacerySigaViva();
 
@@ -94,14 +97,13 @@ public:
      * pos: se llama a los metodos de configuracion de juego y mostrar menu de juego.
      */
     void iniciarJuego();
-
-    void verificarCargasCelulasVecinasSigaViva(int limiteSigaViva, int *cantidadCelulasSigaViva);
+    /*
+     * pre:-
+     * pos: devulve el atributo modoJuego.
+     */
 
     int obtenerModoJuego();
 
-    void continuarJuego();
-
-    void verificarCargasCelulasVecinasNazcaCelula(int *cantidadCelulasVecinasParaNacer);
 };
 
 
