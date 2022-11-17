@@ -11,13 +11,13 @@ void Imprimir::pintarCelda(Tablero *tablero){
     Imagen.SetBitDepth(8);
     for(int prof = 0; prof < tablero->obtenerProfundidad(); prof++){
         Imagen.ReadFromFile("BaseImagen.bmp");
-        Imagen.SetSize(tablero->obtenerFila(), tablero->obtenerColumna());
-        for( int i = 0 ; i < Imagen.TellWidth(); i++) {
-            for (int j = 0; j < Imagen.TellHeight(); j++) {
-                Imagen(i, j)->Red = tablero->obtenerCelda(prof, i, j)->obtenerCelula()->obtenerCargaEnPos(0);
-                Imagen(i, j)->Blue = tablero->obtenerCelda(prof, i, j)->obtenerCelula()->obtenerCargaEnPos(1);
-                Imagen(i, j)->Green = tablero->obtenerCelda(prof, i, j)->obtenerCelula()->obtenerCargaEnPos(2);
-                Imagen(i, j)->Alpha = 0;
+        Imagen.SetSize(tablero->obtenerColumna(), tablero->obtenerFila());
+        for( int i = 0 ; i < Imagen.TellHeight(); i++) {
+            for (int j = 0; j < Imagen.TellWidth(); j++) {
+                Imagen(j, i)->Red = tablero->obtenerCelda(prof, i, j)->obtenerCelula()->obtenerCargaEnPos(0);
+                Imagen(j, i)->Blue = tablero->obtenerCelda(prof, i, j)->obtenerCelula()->obtenerCargaEnPos(1);
+                Imagen(j, i)->Green = tablero->obtenerCelda(prof, i, j)->obtenerCelula()->obtenerCargaEnPos(2);
+                //Imagen(i, j)->Alpha = 0;
             }
         }
         std::string imagenIesima = "imagen" + to_string(prof) + ".bmp";

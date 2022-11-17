@@ -66,7 +66,7 @@ void Tablero::cargarCelulaUsuario(int modoJuego) {
         verificarIngresoUsuario(cantidadMaximaPosZ, &posicionZ);
         cout << "la celda que esta en ("<< posicionX + 1 << ","<< posicionY + 1 << "," << posicionZ + 1 << ")" <<endl;
 
-        Celda* celdaUsuario = obtenerCelda(posicionX,posicionY, posicionZ);
+        Celda* celdaUsuario = obtenerCelda(posicionZ,posicionX, posicionY);
         if(not celdaUsuario->obtenerCelula()->estaViva()){
             celdaUsuario->obtenerCelula()->revivir();
             if(modoJuego == 3){
